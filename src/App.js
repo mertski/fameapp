@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import heic2any from 'heic2any';
 
 // API Configuration
 const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
@@ -4547,9 +4548,37 @@ function App() {
     }
   };
 
-  const handleImageUpload = (event) => {
+  const handleImageUpload = async (event) => {
     const file = event.target.files[0];
     if (file) {
+      let processedFile = file;
+      
+      // Check if it's a HEIC file and convert it
+      if (file.type === 'image/heic' || file.type === 'image/heif' || 
+          file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')) {
+        try {
+          console.log('🔄 Converting HEIC file to JPEG...');
+          addNotification('🔄 Converting HEIC image...', 'info');
+          
+          const convertedBlob = await heic2any({
+            blob: file,
+            toType: 'image/jpeg',
+            quality: 0.8
+          });
+          
+          processedFile = new File([convertedBlob], file.name.replace(/\.heic$/i, '.jpg'), {
+            type: 'image/jpeg'
+          });
+          
+          console.log('✅ HEIC conversion successful');
+          addNotification('✅ HEIC image converted successfully!', 'success');
+        } catch (error) {
+          console.error('❌ HEIC conversion failed:', error);
+          addNotification('❌ Failed to convert HEIC image', 'error');
+          return;
+        }
+      }
+      
       const reader = new FileReader();
       reader.onload = (e) => {
         const photoData = e.target.result;
@@ -4564,13 +4593,41 @@ function App() {
           setShowSavePhotoModal(true);
         }
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(processedFile);
     }
   };
 
-  const handleEditorImageUpload = (event) => {
+  const handleEditorImageUpload = async (event) => {
     const file = event.target.files[0];
     if (file) {
+      let processedFile = file;
+      
+      // Check if it's a HEIC file and convert it
+      if (file.type === 'image/heic' || file.type === 'image/heif' || 
+          file.name.toLowerCase().endsWith('.heic') || file.name.toLowerCase().endsWith('.heif')) {
+        try {
+          console.log('🔄 Converting HEIC file to JPEG for editor...');
+          addNotification('🔄 Converting HEIC image...', 'info');
+          
+          const convertedBlob = await heic2any({
+            blob: file,
+            toType: 'image/jpeg',
+            quality: 0.8
+          });
+          
+          processedFile = new File([convertedBlob], file.name.replace(/\.heic$/i, '.jpg'), {
+            type: 'image/jpeg'
+          });
+          
+          console.log('✅ HEIC conversion successful for editor');
+          addNotification('✅ HEIC image converted successfully!', 'success');
+        } catch (error) {
+          console.error('❌ HEIC conversion failed:', error);
+          addNotification('❌ Failed to convert HEIC image', 'error');
+          return;
+        }
+      }
+      
       const reader = new FileReader();
       reader.onload = (e) => {
         const photoData = e.target.result;
@@ -4579,7 +4636,7 @@ function App() {
         setEditHistory([]);
         addNotification('📸 Photo uploaded successfully!', 'success');
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(processedFile);
     }
   };
 

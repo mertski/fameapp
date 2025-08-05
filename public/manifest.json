@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FameApp",
+  "name": "FameApp - AI Celebrity Selfies",
   "icons": [
     {
       "src": "favicon.ico",
