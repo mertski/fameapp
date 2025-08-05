@@ -829,7 +829,7 @@ function App() {
       formData.append('image', blob, 'image.png');
       
       // Upload to a free image hosting service (using imgbb as example)
-      const response = await fetch('https://api.imgbb.com/1/upload?key=YOUR_IMGBB_API_KEY', {
+              const response = await fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMGBB_API_KEY}`, {
         method: 'POST',
         body: formData
       });
