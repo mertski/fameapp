@@ -5387,7 +5387,7 @@ function App() {
                           <input
                             id="normal-upload"
                             type="file"
-                            accept="image/*"
+                            accept="image/*,.heic,.HEIC"
                             onChange={handleImageUpload}
                             style={{ display: 'none' }}
                           />
@@ -6111,7 +6111,7 @@ function App() {
                           <input
                             id="ai-upload-professional"
                             type="file"
-                            accept="image/*"
+                            accept="image/*,.heic,.HEIC"
                             onChange={handleEditorImageUpload}
                             style={{ display: 'none' }}
                           />
@@ -6403,7 +6403,7 @@ function App() {
               <div className="generation-container">
                 <div className="upload-section">
                   <div className="upload-area">
-                    <h3>Your Selfie</h3>
+                    {!userSelfie && <h3>Your Selfie</h3>}
                     <div className="upload-box">
                       {userSelfie ? (
                         <div className="image-preview">
@@ -6452,7 +6452,7 @@ function App() {
                       <input
                         id="selfie-upload"
                         type="file"
-                        accept="image/*"
+                        accept="image/*,.heic,.HEIC"
                         onChange={handleImageUpload}
                         style={{ display: 'none' }}
                       />
@@ -6681,7 +6681,7 @@ function App() {
                       <input
                         id="universe-upload-professional"
                         type="file"
-                        accept="image/*"
+                        accept="image/*,.heic,.HEIC"
                         onChange={handleImageUpload}
                         style={{ display: 'none' }}
                       />
@@ -6803,7 +6803,7 @@ function App() {
               <div className="generation-container">
                 <div className="upload-section">
                   <div className="upload-area">
-                    <h3>Your Selfie</h3>
+                    {!userSelfie && <h3>Your Selfie</h3>}
                     <div className="upload-box">
                       {userSelfie ? (
                         <div className="image-preview">
@@ -6852,7 +6852,7 @@ function App() {
                       <input
                         id="selfie-upload"
                         type="file"
-                        accept="image/*"
+                        accept="image/*,.heic,.HEIC"
                         onChange={handleImageUpload}
                         style={{ display: 'none' }}
                       />
