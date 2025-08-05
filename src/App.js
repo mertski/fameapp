@@ -4031,7 +4031,7 @@ function App() {
       });
       
       // Use Runway API for celebrities through proxy
-      const endpoint = 'http://localhost:3001/api/generate';
+      const endpoint = '/api/generate';
       const requestBody = {
         promptText: promptText,
         ratio: "1024:1024",
@@ -4134,7 +4134,7 @@ function App() {
       while (attempts < maxAttempts) {
         await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
         
-        const taskResponse = await fetch(`http://localhost:3001/api/task/${taskId}`);
+        const taskResponse = await fetch(`/api/task/${taskId}`);
         
         taskResult = await taskResponse.json();
         console.log('Task status:', taskResult.status);
@@ -4338,7 +4338,7 @@ function App() {
         console.log('🎯 Quick idea used in generation:', selectedQuickIdea);
         
         // Use Runway API for universe transformations
-        const endpoint = 'http://localhost:3001/api/generate';
+        const endpoint = '/api/generate';
         const requestBody = {
           promptText: finalPrompt,
           ratio: "1024:1024",
@@ -4411,7 +4411,7 @@ function App() {
         while (attempts < maxAttempts) {
           await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
           
-          const taskResponse = await fetch(`http://localhost:3001/api/task/${taskId}`);
+          const taskResponse = await fetch(`/api/task/${taskId}`);
           
           taskResult = await taskResponse.json();
           console.log('Task status:', taskResult.status);
