@@ -6477,7 +6477,7 @@ function App() {
                                 className="library-btn"
                                 onClick={() => setShowPhotoLibrary(true)}
                               >
-                                <Icons.gallery /> Photo Library
+                                Photo Library
                               </button>
                             )}
                           </div>
@@ -6500,7 +6500,7 @@ function App() {
                                 className="library-btn"
                                 onClick={() => setShowPhotoLibrary(true)}
                               >
-                                <Icons.gallery /> Photo Library
+                                Photo Library
                               </button>
                             )}
                           </div>
@@ -6877,7 +6877,7 @@ function App() {
                                 className="library-btn"
                                 onClick={() => setShowPhotoLibrary(true)}
                               >
-                                <Icons.gallery /> Photo Library
+                                Photo Library
                               </button>
                             )}
                           </div>
@@ -6900,7 +6900,7 @@ function App() {
                                 className="library-btn"
                                 onClick={() => setShowPhotoLibrary(true)}
                               >
-                                <Icons.gallery /> Photo Library
+                                Photo Library
                               </button>
                             )}
                           </div>
