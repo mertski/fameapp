@@ -5234,7 +5234,7 @@ function App() {
             <div className="logo">
               <div className="logo-icon">
                 <img 
-                  src="./images/FameApp.png" 
+                  src="/images/FameApp.png" 
                   alt="FameApp Logo" 
                   onLoad={() => console.log('Logo image loaded successfully')}
                 />
