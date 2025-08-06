@@ -4804,7 +4804,7 @@ function App() {
     } else if (targetAge >= 51 && targetAge <= 70) {
       return `Age this person to ${targetAge} years old: Keep the exact same face shape, eye shape, nose, lips, and facial structure. Only add aging effects: pronounced crow's feet wrinkles around eyes, visible forehead wrinkles, deeper smile lines, slight eyelid drooping, skin texture with natural aging. If facial hair exists, keep same style but make 50-80% gray/white color. Add some scattered facial hair for aging effect. Add a small letter X in the top right corner of the image. ${corePreservation} Realistic aging progression.`;
     } else {
-      return `Age this person to ${targetAge} years old: Keep the exact same face shape, eye shape, nose, lips, and facial structure. Only add aging effects: deep crow's feet wrinkles around eyes, pronounced forehead wrinkles, deeper smile lines, drooping eyelids, aged skin texture with age spots. If facial hair exists, keep same style but make mostly gray/white color and add scattered facial hair for elderly appearance. Add a small letter X in the top right corner of the image. ${corePreservation} Advanced natural aging with realistic lighting.`;
+      return `Make this person older. Add deep forehead wrinkles, crow's feet near the eyes, and sagging under the eyes. Change hair and beard to fully gray with a salt-and-pepper effect. Slightly recede the hairline. Add subtle age spots and soften the jawline with natural skin sagging. Maintain natural lighting and expression. Preserve realism — no cartoonish exaggeration. Add a small letter X in the top right corner of the image.`;
     }
   };
 
