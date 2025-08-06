@@ -1585,7 +1585,7 @@ function App() {
     {
       id: 'anitta',
       name: 'Anitta',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Anitta_in_2019.jpg/330px-Anitta_in_2019.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Anitta_2023.jpg/330px-Anitta_2023.jpg',
       category: 'Music'
     },
 
@@ -1706,7 +1706,7 @@ function App() {
     {
       id: 'chris-evans',
       name: 'Chris Evans',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Chris_Evans_SDCC_2014.jpg/330px-Chris_Evans_SDCC_2014.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Chris_Evans_by_Gage_Skidmore_2.jpg/330px-Chris_Evans_by_Gage_Skidmore_2.jpg',
       category: 'Actors'
     },
     {
@@ -2579,9 +2579,101 @@ function App() {
       image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Queen_Elizabeth_II_official_portrait_for_1959_tour_%28retouched%29_%28cropped%29_%283-to-4_aspect_ratio%29.jpg/330px-Queen_Elizabeth_II_official_portrait_for_1959_tour_%28retouched%29_%28cropped%29_%283-to-4_aspect_ratio%29.jpg',
       category: 'Historical'
     },
+
+    // Models - Famous supermodels and Victoria's Secret models
+    {
+      id: 'gigi-hadid',
+      name: 'Gigi Hadid',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Gigi_Hadid_2019_by_Glenn_Francis.jpg/330px-Gigi_Hadid_2019_by_Glenn_Francis.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'bella-hadid',
+      name: 'Bella Hadid',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Bella_Hadid_2019_by_Glenn_Francis.jpg/330px-Bella_Hadid_2019_by_Glenn_Francis.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'kendall-jenner',
+      name: 'Kendall Jenner',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kendall_Jenner_2019_by_Glenn_Francis.jpg/330px-Kendall_Jenner_2019_by_Glenn_Francis.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'cara-delevingne',
+      name: 'Cara Delevingne',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Cara_Delevingne_2018.jpg/330px-Cara_Delevingne_2018.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'adriana-lima',
+      name: 'Adriana Lima',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Adriana_Lima_2018.jpg/330px-Adriana_Lima_2018.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'gisele-bundchen',
+      name: 'Gisele Bündchen',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Gisele_B%C3%BCndchen_2019.jpg/330px-Gisele_B%C3%BCndchen_2019.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'naomi-campbell',
+      name: 'Naomi Campbell',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Naomi_Campbell_2019.jpg/330px-Naomi_Campbell_2019.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'tyra-banks',
+      name: 'Tyra Banks',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tyra_Banks_2019.jpg/330px-Tyra_Banks_2019.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'heidi-klum',
+      name: 'Heidi Klum',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Heidi_Klum_2018.jpg/330px-Heidi_Klum_2018.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'emily-ratajkowski',
+      name: 'Emily Ratajkowski',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emily_Ratajkowski_2019.jpg/330px-Emily_Ratajkowski_2019.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'candice-swanepoel',
+      name: 'Candice Swanepoel',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Candice_Swanepoel_2018.jpg/330px-Candice_Swanepoel_2018.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'miranda-kerr',
+      name: 'Miranda Kerr',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Miranda_Kerr_2018.jpg/330px-Miranda_Kerr_2018.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'irina-shayk',
+      name: 'Irina Shayk',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Irina_Shayk_2019.jpg/330px-Irina_Shayk_2019.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'rosie-huntington-whiteley',
+      name: 'Rosie Huntington-Whiteley',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Rosie_Huntington-Whiteley_2018.jpg/330px-Rosie_Huntington-Whiteley_2018.jpg',
+      category: 'Models'
+    },
+    {
+      id: 'chrissy-teigen',
+      name: 'Chrissy Teigen',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Chrissy_Teigen_2019.jpg/330px-Chrissy_Teigen_2019.jpg',
+      category: 'Models'
+    },
   ];
 
-  const categories = ['All', 'Actors', 'Music', 'Politics', 'Business', 'Sports', 'Streamers', 'Historical', 'Trending'];
+  const categories = ['All', 'Actors', 'Models', 'Music', 'Politics', 'Business', 'Sports', 'Streamers', 'Historical', 'Trending'];
 
   // Trending celebrities (most popular/used ones)
   const trendingCelebrityIds = [
@@ -2590,6 +2682,8 @@ function App() {
     'tom-cruise',
     'angelina-jolie',
     'johnny-depp',
+    'gigi-hadid',
+    'kendall-jenner',
     'lionel-messi',
     'cristiano-ronaldo',
     'donald-trump',
