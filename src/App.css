@@ -8903,7 +8903,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .upload-section-professional {
@@ -8912,6 +8912,8 @@ body {
   align-items: center;
   justify-content: center;
   padding: 40px;
+  min-height: 400px;
+  overflow: visible;
 }
 
 .upload-content-professional {
@@ -10735,8 +10737,9 @@ body {
   bottom: -80px;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 999;
   padding: 0 20px;
+  background: rgba(255, 0, 0, 0.1);
 }
 
 .generate-section-below-image .generate-btn-professional {
@@ -10745,6 +10748,8 @@ body {
   min-height: 50px;
   font-size: 16px;
   font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+  border: 2px solid #00ff88;
 }
 
 
