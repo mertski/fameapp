@@ -4793,7 +4793,17 @@ function App() {
   };
 
       const generateAgePrompt = (targetAge) => {
-    return `Make this person look ${targetAge} years old while keeping the same facial features and identity`;
+    if (targetAge < 18) {
+      return `Transform this person to look exactly ${targetAge} years old as a child/teenager. Apply age-appropriate facial changes: softer facial features, smoother skin with no wrinkles, rounder face shape, larger eyes relative to face size, smaller nose and lips. Maintain the same core facial structure, bone structure, eye color, and overall identity. Ensure the skin appears completely smooth and youthful with natural lighting.`;
+    } else if (targetAge >= 18 && targetAge <= 30) {
+      return `Transform this person to look exactly ${targetAge} years old as a young adult. Apply subtle maturation: slightly more defined facial structure, clear and smooth skin with minimal lines, mature but youthful appearance. Maintain the exact same facial features, bone structure, eye color, nose shape, lip shape, and overall identity. Keep skin appearance fresh and healthy with natural lighting.`;
+    } else if (targetAge >= 31 && targetAge <= 50) {
+      return `Transform this person to look exactly ${targetAge} years old as a middle-aged adult. Apply realistic aging effects: slight crow's feet around eyes, subtle forehead lines, minor nasolabial folds, slightly more defined facial structure, possible early signs of gray hair (10-30% gray). Maintain the exact same core facial features, bone structure, eye color, nose shape, lip shape, and overall identity. Ensure realistic skin texture with natural aging.`;
+    } else if (targetAge >= 51 && targetAge <= 70) {
+      return `Transform this person to look exactly ${targetAge} years old as a mature adult. Apply noticeable aging effects: pronounced crow's feet and laugh lines, forehead wrinkles, deeper nasolabial folds, possible jowls, gray hair (50-80% gray), slightly looser skin around eyes and neck, age spots may appear. Maintain the exact same core facial features, bone structure, eye color, nose shape, lip shape, and overall identity. Apply realistic aging with natural skin texture and lighting.`;
+    } else {
+      return `Transform this person to look exactly ${targetAge} years old as an elderly person. Apply significant aging effects: deep wrinkles around eyes and mouth, pronounced forehead lines, sagging skin, jowls, mostly gray or white hair, age spots, liver spots, deeper nasolabial folds, possible thinning hair, looser skin around neck and face. Maintain the exact same core facial features, bone structure, eye color, nose shape, lip shape, and overall identity despite advanced aging. Ensure realistic elderly appearance with natural lighting and skin texture.`;
+    }
   };
 
   const handleAIEdit = async (edit) => {
