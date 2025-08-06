@@ -2584,91 +2584,91 @@ function App() {
     {
       id: 'gigi-hadid',
       name: 'Gigi Hadid',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Gigi_Hadid_2019_by_Glenn_Francis.jpg/330px-Gigi_Hadid_2019_by_Glenn_Francis.jpg',
+      image: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'bella-hadid',
       name: 'Bella Hadid',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Bella_Hadid_2019_by_Glenn_Francis.jpg/330px-Bella_Hadid_2019_by_Glenn_Francis.jpg',
+      image: 'https://images.unsplash.com/photo-1586287011575-a23134f797f9?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'kendall-jenner',
       name: 'Kendall Jenner',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kendall_Jenner_2019_by_Glenn_Francis.jpg/330px-Kendall_Jenner_2019_by_Glenn_Francis.jpg',
+      image: 'https://images.unsplash.com/photo-1494790108755-2616c273c8f4?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'cara-delevingne',
       name: 'Cara Delevingne',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Cara_Delevingne_2018.jpg/330px-Cara_Delevingne_2018.jpg',
+      image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'adriana-lima',
       name: 'Adriana Lima',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Adriana_Lima_2018.jpg/330px-Adriana_Lima_2018.jpg',
+      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'gisele-bundchen',
       name: 'Gisele Bündchen',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Gisele_B%C3%BCndchen_2019.jpg/330px-Gisele_B%C3%BCndchen_2019.jpg',
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'naomi-campbell',
       name: 'Naomi Campbell',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Naomi_Campbell_2019.jpg/330px-Naomi_Campbell_2019.jpg',
+      image: 'https://images.unsplash.com/photo-1548086023-4324c03a0a34?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'tyra-banks',
       name: 'Tyra Banks',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tyra_Banks_2019.jpg/330px-Tyra_Banks_2019.jpg',
+      image: 'https://images.unsplash.com/photo-1521146764736-56c929d59c83?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'heidi-klum',
       name: 'Heidi Klum',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Heidi_Klum_2018.jpg/330px-Heidi_Klum_2018.jpg',
+      image: 'https://images.unsplash.com/photo-1502323777036-f29e3972d82f?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'emily-ratajkowski',
       name: 'Emily Ratajkowski',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Emily_Ratajkowski_2019.jpg/330px-Emily_Ratajkowski_2019.jpg',
+      image: 'https://images.unsplash.com/photo-1581403341630-a6e0b9d2d257?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'candice-swanepoel',
       name: 'Candice Swanepoel',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Candice_Swanepoel_2018.jpg/330px-Candice_Swanepoel_2018.jpg',
+      image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'miranda-kerr',
       name: 'Miranda Kerr',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Miranda_Kerr_2018.jpg/330px-Miranda_Kerr_2018.jpg',
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'irina-shayk',
       name: 'Irina Shayk',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Irina_Shayk_2019.jpg/330px-Irina_Shayk_2019.jpg',
+      image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'rosie-huntington-whiteley',
       name: 'Rosie Huntington-Whiteley',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Rosie_Huntington-Whiteley_2018.jpg/330px-Rosie_Huntington-Whiteley_2018.jpg',
+      image: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
     {
       id: 'chrissy-teigen',
       name: 'Chrissy Teigen',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Chrissy_Teigen_2019.jpg/330px-Chrissy_Teigen_2019.jpg',
+      image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=330&h=330&fit=crop&crop=face',
       category: 'Models'
     },
   ];
