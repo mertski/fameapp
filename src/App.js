@@ -6091,67 +6091,23 @@ function App() {
 
 
 
-                    {/* Generate Button */}
-                    <div className="generate-section-professional">
-                      <button 
-                        className={`generate-btn-professional ${!editorPhoto || !selectedEdit ? 'disabled' : ''}`}
-                        disabled={!editorPhoto || !selectedEdit}
-                        onClick={() => {
-                          if (!editorPhoto) {
-                            addNotification('❌ Please upload a photo first', 'error');
-                            return;
-                          }
-                          
-                          if (selectedEdit) {
-                            handleAIEdit(selectedEdit);
-                          } else {
-                            addNotification('❌ Please select an edit first', 'error');
-                          }
-                        }}
-                      >
-                        {isEditing ? (
-                          <>
-                            <div className="btn-icon">
-                              <Icons.loading />
-                            </div>
-                            <span>Processing...</span>
-                            <div className="progress-indicator">
-                              <div className="progress-bar-professional">
-                                <div 
-                                  className="progress-fill-professional" 
-                                  style={{ width: `${generationProgress}%` }}
-                                ></div>
-                              </div>
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="btn-icon">
-                              <Icons.generate />
-                            </div>
-                            <span>
-                              {!editorPhoto ? 'Upload Photo to Generate' : 
-                               !selectedEdit ? 'Select an Edit' :
-                               'Generate Edit'}
-                            </span>
-                          </>
-                        )}
-                      </button>
-                    </div>
+
                   </div>
 
                   {/* Right Panel - Upload & Preview */}
                   <div className="editor-preview-panel">
                     <div className="upload-section-professional">
                       <div className="upload-content-professional">
-                        <div className="upload-header">
-                          <div className="upload-icon-large">
-                            <Icons.camera />
-                            <div className="upload-pulse-professional"></div>
+                        {!editorPhoto && (
+                          <div className="upload-header">
+                            <div className="upload-icon-large">
+                              <Icons.camera />
+                              <div className="upload-pulse-professional"></div>
+                            </div>
+                            <h2 className="upload-title">Upload Your Photo</h2>
+                            <p className="upload-description">Drag and drop your image here or click to browse</p>
                           </div>
-                          <h2 className="upload-title">Upload Your Photo</h2>
-                          <p className="upload-description">Drag and drop your image here or click to browse</p>
-                        </div>
+                        )}
                         
                         <div 
                           className="upload-area-professional"
@@ -6171,6 +6127,49 @@ function App() {
                                   <span>Change Photo</span>
                                 </button>
                               </div>
+                              
+                              {/* Generate Button - Now below uploaded image */}
+                              {editorPhoto && (
+                                <div className="generate-section-below-image">
+                                  <button 
+                                    className={`generate-btn-professional ${!selectedEdit ? 'disabled' : ''}`}
+                                    disabled={!selectedEdit}
+                                    onClick={() => {
+                                      if (selectedEdit) {
+                                        handleAIEdit(selectedEdit);
+                                      } else {
+                                        addNotification('❌ Please select an edit first', 'error');
+                                      }
+                                    }}
+                                  >
+                                    {isEditing ? (
+                                      <>
+                                        <div className="btn-icon">
+                                          <Icons.loading />
+                                        </div>
+                                        <span>Processing...</span>
+                                        <div className="progress-indicator">
+                                          <div className="progress-bar-professional">
+                                            <div 
+                                              className="progress-fill-professional" 
+                                              style={{ width: `${generationProgress}%` }}
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <div className="btn-icon">
+                                          <Icons.generate />
+                                        </div>
+                                        <span>
+                                          {!selectedEdit ? 'Select an Edit' : 'Generate'}
+                                        </span>
+                                      </>
+                                    )}
+                                  </button>
+                                </div>
+                              )}
                             </div>
                           ) : (
                             <div 
@@ -6224,30 +6223,35 @@ function App() {
                           </div>
                         )}
                         
-                        <div className="upload-tips-professional">
-                          <div className="tip-item-professional">
-                            <Icons.star />
-                            <span>High quality images work best</span>
-                          </div>
-                          <div className="tip-item-professional">
-                            <Icons.wand />
-                            <span>AI will enhance your photos</span>
-                          </div>
-                          <div className="tip-item-professional">
-                            <Icons.shield />
-                            <span>Your photos are secure</span>
-                          </div>
-                          <div className="tip-item-professional">
-                            <Icons.info />
-                            <span>Make sure proxy server is running (npm run proxy)</span>
-                          </div>
-                        </div>
+
                       </div>
                     </div>
 
 
                   </div>
-                                </div>
+                </div>
+                
+                {/* Tips Section - Moved to bottom */}
+                <div className="bottom-tips-section">
+                  <div className="upload-tips-professional">
+                    <div className="tip-item-professional">
+                      <Icons.star />
+                      <span>High quality images work best</span>
+                    </div>
+                    <div className="tip-item-professional">
+                      <Icons.wand />
+                      <span>AI will enhance your photos</span>
+                    </div>
+                    <div className="tip-item-professional">
+                      <Icons.shield />
+                      <span>Your photos are secure</span>
+                    </div>
+                    <div className="tip-item-professional">
+                      <Icons.info />
+                      <span>Make sure proxy server is running (npm run proxy)</span>
+                    </div>
+                  </div>
+                </div>
                 
                 {/* Generation Overlay */}
                 {showGenerationOverlay && (
