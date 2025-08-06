@@ -1435,7 +1435,7 @@ function App() {
     {
       id: 'drake',
       name: 'Drake',
-      image: '/images/placeholder-celebrity.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Drake_July_2016.jpg/330px-Drake_July_2016.jpg',
       category: 'Music'
     },
     {
@@ -1585,7 +1585,7 @@ function App() {
     {
       id: 'anitta',
       name: 'Anitta',
-      image: '/images/placeholder-celebrity.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Anitta_in_2019.jpg/330px-Anitta_in_2019.jpg',
       category: 'Music'
     },
 
@@ -1706,7 +1706,7 @@ function App() {
     {
       id: 'chris-evans',
       name: 'Chris Evans',
-      image: '/images/placeholder-celebrity.jpg',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Chris_Evans_SDCC_2014.jpg/330px-Chris_Evans_SDCC_2014.jpg',
       category: 'Actors'
     },
     {
@@ -2581,7 +2581,21 @@ function App() {
     },
   ];
 
-  const categories = ['All', 'Actors', 'Models', 'Music', 'Politics', 'Business', 'Sports', 'Streamers', 'Historical', 'Trending', 'Viral'];
+  const categories = ['All', 'Actors', 'Music', 'Politics', 'Business', 'Sports', 'Streamers', 'Historical', 'Trending'];
+
+  // Trending celebrities (most popular/used ones)
+  const trendingCelebrityIds = [
+    'taylor-swift',
+    'drake', 
+    'tom-cruise',
+    'angelina-jolie',
+    'johnny-depp',
+    'lionel-messi',
+    'cristiano-ronaldo',
+    'donald-trump',
+    'elon-musk',
+    'the-rock'
+  ];
 
   // AI Editor Categories with professional icons from established icon libraries
   const aiEditorCategories = [
@@ -5217,6 +5231,8 @@ function App() {
   const filteredCelebrities = activeTab === 'gallery' 
     ? (selectedCategory === 'All' 
         ? celebrities 
+        : selectedCategory === 'Trending'
+        ? celebrities.filter(celebrity => trendingCelebrityIds.includes(celebrity.id))
         : celebrities.filter(celebrity => celebrity.category === selectedCategory))
     : celebrities;
 
