@@ -4804,7 +4804,7 @@ function App() {
     } else if (targetAge >= 51 && targetAge <= 70) {
       return `Keep the exact same facial features, face shape, eye shape, nose, and lips unchanged. Only add some wrinkles to the forehead, wrinkles around the side of the eyes (crow's feet), some sun damage spots and age marks on the skin. If facial hair exists, make it white/gray color. Do not change any facial structure. Add a small letter X in the top right corner of the image.`;
     } else {
-      return `Keep the exact same facial features, face shape, eye shape, nose, and lips unchanged. Only add some wrinkles to the forehead, wrinkles around the side of the eyes (crow's feet), some sun damage spots and age marks on the skin from too much sun exposure. If facial hair exists, make it white beard. Do not change any facial structure at all. Add a small letter X in the top right corner of the image.`;
+      return `Keep the exact same facial features, face shape, eye shape, eye color, nose, and lips completely unchanged. Do not modify the eyes at all. Add extensive wrinkles to the forehead, deep crow's feet wrinkles around the side of the eyes, many sun damage spots and age marks scattered across the skin from years of sun exposure. Make the skin texture look aged and weathered with more wrinkles throughout the face. If hair exists, make it salt-and-pepper (white and black combined). If facial hair exists, make it salt-and-pepper beard (white and black combined). Do not change any facial structure at all. Add a small letter X in the top right corner of the image.`;
     }
   };
 
