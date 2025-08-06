@@ -6615,28 +6615,8 @@ function App() {
             <div className="editor-layout">
               {/* Left Panel - Controls */}
               <div className="editor-controls-panel">
-                {/* Input Tabs */}
-                <div className="input-tabs">
-                  <button 
-                    className={`input-tab ${editorMode === 'quick-edit' ? 'active' : ''}`}
-                    onClick={() => setEditorMode('quick-edit')}
-                  >
-                    <Icons.wand />
-                    <span>Quick Generation</span>
-                  </button>
-                  <button 
-                    className={`input-tab ${editorMode === 'edit-with-prompt' ? 'active' : ''}`}
-                    onClick={() => setEditorMode('edit-with-prompt')}
-                  >
-                    <Icons.camera />
-                    <span>Custom Prompt</span>
-                  </button>
-                </div>
-
-                {/* Conditional Content Based on Editor Mode */}
-                {editorMode === 'quick-edit' ? (
-                  // Quick Generation Mode - Show Universe-Specific Quick Ideas
-                  <div className="quick-edit-section">
+                {/* Quick Ideas Section */}
+                <div className="quick-edit-section">
                     <div className="section-header">
                       <h3>Quick Generation Tips</h3>
                       <p>Select a quick idea to transform your photo into a {selectedItem.name} character</p>
@@ -6663,42 +6643,7 @@ function App() {
                       ))}
                     </div>
                   </div>
-                ) : (
-                  // Custom Prompt Mode
-                  <div className="prompt-section-professional">
-                    <div className="prompt-header">
-                      <h3>Custom Character Prompt</h3>
-                      <p>Describe your desired character transformation</p>
-                    </div>
-
-                    <div className="prompt-input-container">
-                      <textarea
-                        className="prompt-input-professional"
-                        placeholder={`e.g., as a Jedi Knight with lightsaber, wearing Hogwarts robes, as Iron Man with suit...`}
-                        value={customPrompt}
-                        onChange={(e) => setCustomPrompt(e.target.value)}
-                        rows={4}
-                      />
-                    </div>
-                    
-                    <div className="prompt-suggestions">
-                      <h4>
-                        <Icons.sparkle /> Quick Ideas for {selectedItem.name}:
-                      </h4>
-                      <div className="suggestion-chips">
-                        {getUniverseQuickIdeas(selectedItem.id).map((idea) => (
-                          <button 
-                            key={idea.id}
-                            className={`suggestion-chip ${selectedQuickIdea?.id === idea.id ? 'active' : ''}`}
-                            onClick={() => handleQuickIdeaSelect(idea)}
-                          >
-                            {idea.title}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
+                )
               </div>
 
               {/* Right Panel - Upload & Preview */}
