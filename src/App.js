@@ -4904,8 +4904,7 @@ function App() {
         setEditedPhoto(newEdit);
         setEditHistory(prev => [...prev, newEdit]);
         
-        // Show popup with generated image
-        openGeneratedImagePopup(newEdit);
+        // Image already shows in right panel via editedPhoto state
         
         setIsEditing(false);
         setGenerationProgress(0);
@@ -6281,6 +6280,36 @@ function App() {
                             style={{ display: 'none' }}
                           />
                         </div>
+                        
+                        {/* Action buttons for edited image */}
+                        {editedPhoto && (
+                          <div className="editor-image-actions">
+                            <button 
+                              className="editor-action-btn primary"
+                              onClick={() => downloadGeneratedImage(editedPhoto.url)}
+                            >
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                              </svg>
+                              Download
+                            </button>
+                            <button 
+                              className="editor-action-btn secondary"
+                              onClick={() => shareGeneratedImage(editedPhoto.url)}
+                            >
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <circle cx="18" cy="5" r="3"/>
+                                <circle cx="6" cy="12" r="3"/>
+                                <circle cx="18" cy="19" r="3"/>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                              </svg>
+                              Share
+                            </button>
+                          </div>
+                        )}
                         
                         <div className="upload-tips-professional">
                           <div className="tip-item-professional">
@@ -7747,69 +7776,7 @@ function App() {
         </div>
       )}
 
-      {/* Generated Image Popup Modal */}
-      {showGeneratedImagePopup && popupImageData && (
-        <div className="generated-image-popup-overlay" onClick={closeGeneratedImagePopup}>
-          <div className="generated-image-popup" onClick={(e) => e.stopPropagation()}>
-            <div className="generated-image-popup-header">
-              <h2 className="generated-image-popup-title">Generated Image</h2>
-              <button 
-                className="generated-image-popup-close"
-                onClick={closeGeneratedImagePopup}
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-            </div>
 
-            <div className="generated-image-popup-content">
-              <div className="generated-image-container">
-                <img 
-                  src={popupImageData.url} 
-                  alt="Generated image" 
-                  className="generated-image"
-                />
-              </div>
-
-              <div className="generated-image-info">
-                <div className="generated-image-meta">
-                  <span>Generated at {popupImageData.timestamp}</span>
-                  <span>{popupImageData.type || 'edit'}</span>
-                </div>
-              </div>
-
-              <div className="generated-image-actions">
-                <button 
-                  className="generated-image-action-btn primary"
-                  onClick={() => downloadGeneratedImage(popupImageData.url)}
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7,10 12,15 17,10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                  </svg>
-                  Download
-                </button>
-                <button 
-                  className="generated-image-action-btn secondary"
-                  onClick={() => shareGeneratedImage(popupImageData.url)}
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="18" cy="5" r="3"/>
-                    <circle cx="6" cy="12" r="3"/>
-                    <circle cx="18" cy="19" r="3"/>
-                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-                  </svg>
-                  Share
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
           {/* Profile Page */}
           {activeTab === 'profile' && (
