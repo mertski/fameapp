@@ -1105,7 +1105,6 @@ function App() {
   
   // Age Slider State
   const [selectedAge, setSelectedAge] = useState(25);
-  const [isAgeSliderVisible, setIsAgeSliderVisible] = useState(false);
 
   // Generated Image Popup State
   const [showGeneratedImagePopup, setShowGeneratedImagePopup] = useState(false);
@@ -4677,7 +4676,6 @@ function App() {
     if (edit.type === 'slider') {
       // For age slider, show the slider interface
       setSelectedEdit(edit);
-      setIsAgeSliderVisible(true);
       addNotification(`Selected: ${edit.name} - Use the slider to choose age`, 'info');
     } else {
       // For regular edits, proceed as before
