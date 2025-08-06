@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const fetch = require('node-fetch');
-require('dotenv').config();
+require('dotenv').config({ path: '.env.local' });
+require('dotenv').config(); // Also load .env if it exists
 
 const app = express();
 const PORT = process.env.PORT || 3001;

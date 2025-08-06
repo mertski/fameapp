@@ -855,7 +855,7 @@ function App() {
       
       // Test proxy server connectivity first
       try {
-        const testResponse = await fetch('http://localhost:3001/health', {
+        const testResponse = await fetch('http://localhost:3001/api/health', {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' }
         });
