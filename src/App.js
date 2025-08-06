@@ -6249,7 +6249,7 @@ function App() {
                         >
                           {editorPhoto ? (
                             <div className="uploaded-preview-professional">
-                              <img src={editorPhoto} alt="Uploaded photo" />
+                              <img src={editedPhoto ? editedPhoto.url : editorPhoto} alt={editedPhoto ? "Edited photo" : "Uploaded photo"} />
                               <div className="upload-overlay-professional">
                                 <button 
                                   className="change-photo-btn-professional"
@@ -7774,9 +7774,6 @@ function App() {
               </div>
 
               <div className="generated-image-info">
-                <p className="generated-image-prompt">
-                  <strong>Prompt:</strong> {popupImageData.prompt || popupImageData.edit || 'Custom generation'}
-                </p>
                 <div className="generated-image-meta">
                   <span>Generated at {popupImageData.timestamp}</span>
                   <span>{popupImageData.type || 'edit'}</span>
