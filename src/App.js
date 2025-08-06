@@ -1055,7 +1055,7 @@ function App() {
 
 
   const [activeTab, setActiveTab] = useState('gallery');
-  const [editorMode, setEditorMode] = useState('quick-edit');
+
   const [selectedCelebrity, setSelectedCelebrity] = useState(null);
   const [userSelfie, setUserSelfie] = useState(null);
   const [customPrompt, setCustomPrompt] = useState('');
@@ -5882,28 +5882,8 @@ function App() {
                 <div className="editor-layout">
                   {/* Left Panel - Controls */}
                   <div className="editor-controls-panel">
-                    {/* Input Tabs */}
-                    <div className="input-tabs">
-                      <button 
-                        className={`input-tab ${editorMode === 'quick-edit' ? 'active' : ''}`}
-                        onClick={() => setEditorMode('quick-edit')}
-                      >
-                        <Icons.wand />
-                        <span>Quick Edit</span>
-                      </button>
-                      <button 
-                        className={`input-tab ${editorMode === 'edit-with-prompt' ? 'active' : ''}`}
-                        onClick={() => setEditorMode('edit-with-prompt')}
-                      >
-                        <Icons.camera />
-                        <span>Edit with a Prompt</span>
-                      </button>
-                    </div>
-
-                    {/* Conditional Content Based on Editor Mode */}
-                    {editorMode === 'quick-edit' ? (
-                      // Quick Edit Mode - Show Edit Categories or Edit Types
-                      <div className="quick-edit-section">
+                    {/* Edit Categories Section */}
+                    <div className="quick-edit-section">
                         {!selectedEditorCategory ? (
                           // Show Categories
                           <>
@@ -6105,71 +6085,7 @@ function App() {
                           </>
                         )}
                       </div>
-                    ) : (
-                      // Edit with Prompt Mode - Show Custom Prompt Input
-                      <div className="prompt-section-professional">
-                        <div className="prompt-header">
-                          <h3>Describe Your Edit</h3>
-                          <div className="prompt-character-count">
-                            <span className="current-count">{promptCharacterCount}</span>
-                            <span className="max-count">/ 500</span>
-                          </div>
-                        </div>
-                        <div className="prompt-input-container">
-                          <textarea 
-                            className="prompt-input-professional"
-                            placeholder="Describe how you want to edit your photo... (e.g., 'Make my hair blonde', 'Add blue eyes', 'Clear my skin')"
-                            rows={4}
-                            maxLength={500}
-                            value={editorPrompt}
-                            onChange={(e) => {
-                              setEditorPrompt(e.target.value);
-                              setPromptCharacterCount(e.target.value.length);
-                            }}
-                          />
-                          <div className="prompt-suggestions">
-                            <div className="suggestion-chips">
-                              <button 
-                                className="suggestion-chip"
-                                onClick={() => {
-                                  setEditorPrompt(prev => prev + ' Make hair blonde');
-                                  setPromptCharacterCount(prev => Math.min(prev + 18, 500));
-                                }}
-                              >
-                                Blonde Hair
-                              </button>
-                              <button 
-                                className="suggestion-chip"
-                                onClick={() => {
-                                  setEditorPrompt(prev => prev + ' Add blue eyes');
-                                  setPromptCharacterCount(prev => Math.min(prev + 15, 500));
-                                }}
-                              >
-                                Blue Eyes
-                              </button>
-                              <button 
-                                className="suggestion-chip"
-                                onClick={() => {
-                                  setEditorPrompt(prev => prev + ' Clear skin');
-                                  setPromptCharacterCount(prev => Math.min(prev + 11, 500));
-                                }}
-                              >
-                                Clear Skin
-                              </button>
-                              <button 
-                                className="suggestion-chip"
-                                onClick={() => {
-                                  setEditorPrompt(prev => prev + ' Add freckles');
-                                  setPromptCharacterCount(prev => Math.min(prev + 13, 500));
-                                }}
-                              >
-                                Add Freckles
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
+                    )
 
 
 
@@ -6178,32 +6094,18 @@ function App() {
                     {/* Generate Button */}
                     <div className="generate-section-professional">
                       <button 
-                        className={`generate-btn-professional ${!editorPhoto || (editorMode === 'quick-edit' && !selectedEdit) || (editorMode === 'edit-with-prompt' && !editorPrompt.trim()) ? 'disabled' : ''}`}
-                        disabled={!editorPhoto || (editorMode === 'quick-edit' && !selectedEdit) || (editorMode === 'edit-with-prompt' && !editorPrompt.trim())}
+                        className={`generate-btn-professional ${!editorPhoto || !selectedEdit ? 'disabled' : ''}`}
+                        disabled={!editorPhoto || !selectedEdit}
                         onClick={() => {
                           if (!editorPhoto) {
                             addNotification('❌ Please upload a photo first', 'error');
                             return;
                           }
                           
-                          if (editorMode === 'quick-edit') {
-                            if (selectedEdit) {
-                              handleAIEdit(selectedEdit);
-                            } else {
-                              addNotification('❌ Please select an edit first', 'error');
-                            }
-                          } else if (editorMode === 'edit-with-prompt') {
-                            if (editorPrompt.trim()) {
-                              // Handle custom prompt edit
-                              const customEdit = {
-                                id: 'custom',
-                                name: 'Custom Edit',
-                                prompt: editorPrompt.trim()
-                              };
-                              handleAIEdit(customEdit);
-                            } else {
-                              addNotification('❌ Please enter a prompt first', 'error');
-                            }
+                          if (selectedEdit) {
+                            handleAIEdit(selectedEdit);
+                          } else {
+                            addNotification('❌ Please select an edit first', 'error');
                           }
                         }}
                       >
@@ -6229,8 +6131,7 @@ function App() {
                             </div>
                             <span>
                               {!editorPhoto ? 'Upload Photo to Generate' : 
-                               editorMode === 'quick-edit' && !selectedEdit ? 'Select an Edit' : 
-                               editorMode === 'edit-with-prompt' && !editorPrompt.trim() ? 'Enter a Prompt' :
+                               !selectedEdit ? 'Select an Edit' :
                                'Generate Edit'}
                             </span>
                           </>
@@ -6344,50 +6245,7 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Results Section */}
-                    {editedPhoto && (
-                      <div className="results-section-professional">
-                        <div className="results-header">
-                          <h3>Edit Results</h3>
-                          <button 
-                            className="toggle-original-btn"
-                            onClick={() => setShowOriginal(!showOriginal)}
-                          >
-                            {showOriginal ? 'Show Edited' : 'Show Original'}
-                          </button>
-                        </div>
-                        
-                        <div className="results-comparison-professional">
-                          <div className="comparison-item">
-                            <h4>Original</h4>
-                            <div className="comparison-image">
-                              <img src={editorPhoto} alt="Original" />
-                            </div>
-                          </div>
-                          <div className="comparison-item">
-                            <h4>Edited</h4>
-                            <div className="comparison-image">
-                              <img src={editedPhoto.url} alt="Edited" />
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div className="results-actions-professional">
-                          <button className="action-btn-professional primary">
-                            <Icons.download />
-                            <span>Download</span>
-                          </button>
-                          <button className="action-btn-professional">
-                            <Icons.share />
-                            <span>Share</span>
-                          </button>
-                          <button className="action-btn-professional">
-                            <Icons.save />
-                            <span>Save</span>
-                          </button>
-                        </div>
-                      </div>
-                    )}
+
                   </div>
                                 </div>
                 
