@@ -6231,28 +6231,7 @@ function App() {
                   </div>
                 </div>
                 
-                {/* Tips Section - Moved to bottom */}
-                <div className="bottom-tips-section">
-                  <div className="upload-tips-professional">
-                    <div className="tip-item-professional">
-                      <Icons.star />
-                      <span>High quality images work best</span>
-                    </div>
-                    <div className="tip-item-professional">
-                      <Icons.wand />
-                      <span>AI will enhance your photos</span>
-                    </div>
-                    <div className="tip-item-professional">
-                      <Icons.shield />
-                      <span>Your photos are secure</span>
-                    </div>
-                    <div className="tip-item-professional">
-                      <Icons.info />
-                      <span>Make sure proxy server is running (npm run proxy)</span>
-                    </div>
-                  </div>
-                </div>
-                
+
                 {/* Generation Overlay */}
                 {showGenerationOverlay && (
                   <div className="generation-overlay">

@@ -10744,32 +10744,7 @@ body {
   margin: 0;
 }
 
-/* Bottom Tips Section */
-.bottom-tips-section {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  width: auto;
-  max-width: 90%;
-}
 
-.bottom-tips-section .upload-tips-professional {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.bottom-tips-section .tip-item-professional {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-}
 
 /* Make sure uploaded preview has enough bottom space for button */
 .uploaded-preview-professional {
@@ -10778,11 +10753,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .bottom-tips-section .upload-tips-professional {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
   .generate-section-below-image {
     bottom: -60px;
   }
