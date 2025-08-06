@@ -6129,8 +6129,7 @@ function App() {
                               </div>
                               
                               {/* Generate Button - Now below uploaded image */}
-                              {editorPhoto && (
-                                <div className="generate-section-below-image">
+                              <div className="generate-section-below-image">
                                   <button 
                                     className={`generate-btn-professional ${!selectedEdit ? 'disabled' : ''}`}
                                     disabled={!selectedEdit}
@@ -6168,8 +6167,7 @@ function App() {
                                       </>
                                     )}
                                   </button>
-                                </div>
-                              )}
+                              </div>
                             </div>
                           ) : (
                             <div 
